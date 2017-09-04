@@ -1,0 +1,16 @@
+{
+  "name": "webpack-ac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "Nathan Pickard <nathan.pickard87@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "file-loader": "^0.11.2",
+    "webpack": "^3.5.5"
+  }
+}
