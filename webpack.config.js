@@ -1,4 +1,6 @@
 const path = require("path");
+const ExamplePlugin = require("./ExamplePlugin.js");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -21,15 +23,21 @@ module.exports = {
       // },
       {
         test: /\.jpeg$/,
-        use: ["file-loader"]
-        // use: [
-        //   {
-        //     loader: "url-loader", options: {
-        //       limit: 10000
-        //     }
-        //   }
-        // ]
+        use: [
+          "file-loader"
+        ]
       }
+      // use: [
+      //   {
+      //     loader: "url-loader", options: {
+      //       limit: 10000
+      //     }
+      //   }
     ]
-  }
+  },
+  plugins: [
+    new ExamplePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.ContextReplacementPlugin()
+  ]
 };
